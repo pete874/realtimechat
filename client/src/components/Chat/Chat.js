@@ -53,13 +53,13 @@ const sendMessage = (event) => {
   }
 }
 
-console.log(message, messages);
+console.log(message, messages, name);
 
     return (
         <div className='outerContainer'>
           <div className='container'>
             <InfoBar room={room}/>
-            <Messages messages={messages}/>
+            <Messages messages={messages} name={name}/>
             <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
           </div>
         </div>
