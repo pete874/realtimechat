@@ -1,15 +1,18 @@
 
 .form {
     display: flex;
-    border-top: 2px solid #D3D3D3;
+    border-radius: 20px;
   }
   
   .input {
     border: none;
-    border-radius: 0;
+    border-radius: 0 0 0 13px;
     padding: 5%;
     width: 80%;
     font-size: 1.2em;
+    background-color: #2C373C;
+    color: white;
+    text-decoration: none;
   }
   
   input:focus, textarea:focus, select:focus{
@@ -20,9 +23,10 @@
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #2979FF;
+    background: #054640;
     padding: 20px;
     display: inline-block;
     border: none;
     width: 20%;
+    border-radius: 0 0 13px 0;
   }
