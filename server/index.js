@@ -1,7 +1,7 @@
 const http = require('http');
 const express = require('express');
-const socketio = require('socket.io');
 const cors = require('cors');
+const socketio = require('socket.io');
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
@@ -9,10 +9,17 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server,{
+  cors: {
+    origin: "*",
+    methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"],
+    credentials: true
+  }
+  });
 
-app.use(cors());
+
 app.use(router);
+app.use(cors);
 
 io.on('connect', (socket) => {
   socket.on('join', ({ name, room }, callback) => {
